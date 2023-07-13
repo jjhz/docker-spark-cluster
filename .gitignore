@@ -1,2 +1,8 @@
 # Ignore data files
 *.csv
+
+# Ignore the data directory
+data/
+
+# Ignore the spark history directory
+history/

@@ -39,8 +39,11 @@ RUN mkdir -p $SPARK_LOG_DIR && \
 touch $SPARK_MASTER_LOG && \
 touch $SPARK_WORKER_LOG && \
 ln -sf /dev/stdout $SPARK_MASTER_LOG && \
-ln -sf /dev/stdout $SPARK_WORKER_LOG
+ln -sf /dev/stdout $SPARK_WORKER_LOG && \
+mkdir -p /opt/spark-history
 
 COPY start-spark.sh /
+COPY spark_conf/spark-env.sh /opt/spark/conf/
+COPY spark_conf/spark-defaults.conf /opt/spark/conf/
 
 CMD ["/bin/bash", "/start-spark.sh"]

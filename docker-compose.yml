@@ -5,9 +5,11 @@ services:
     ports:
       - "9090:8080"
       - "7077:7077"
+      - "18080:18080"
     volumes:
        - ./apps:/opt/spark-apps
        - ./data:/opt/spark-data
+       - ./history:/opt/spark-history
     environment:
       - SPARK_LOCAL_IP=spark-master
       - SPARK_WORKLOAD=master

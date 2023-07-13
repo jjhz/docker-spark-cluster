@@ -1,0 +1,1 @@
+export SPARK_HISTORY_OPTS="-Dspark.history.ui.port=18080 -Dspark.history.fs.logDirectory=file:/opt/spark-history -Dspark.history.retainedApplications=30"
